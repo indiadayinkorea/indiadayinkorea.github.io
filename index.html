@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>India Day 2026 — Seoul, South Korea</title>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700;900&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Noto+Sans+KR:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+:root {
+  --saffron: #FF9933;
+  --deep-saffron: #E07B1A;
+  --india-green: #138808;
+  --navy: #000080;
+  --cream: #FDF6E3;
+  --white: #FEFDF8;
+  --gold: #C8941A;
+  --pale-gold: #F5E6B8;
+  --text-dark: #1A1208;
+  --text-mid: #4A3820;
+}
+
+html { scroll-behavior: smooth; }
+body { font-family: 'Crimson Pro', Georgia, serif; background: var(--cream); color: var(--text-dark); overflow-x: hidden; }
+
+/* NAV */
+nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 0 2.5rem; height: 64px;
+  background: rgba(0,0,128,0.96);
+  border-bottom: 1px solid rgba(255,153,51,0.3);
+}
+.nav-brand { font-family: 'Cinzel', serif; font-size: 1rem; color: white; letter-spacing: 0.08em; text-decoration: none; }
+.nav-brand span { color: var(--saffron); }
+.nav-links { display: flex; gap: 2rem; list-style: none; }
+.nav-links a { font-family: 'Noto Sans KR', sans-serif; font-size: 0.75rem; letter-spacing: 0.15em; text-transform: uppercase; color: rgba(255,255,255,0.7); text-decoration: none; transition: color 0.2s; }
+.nav-links a:hover { color: var(--saffron); }
+@media (max-width: 640px) { .nav-links { display: none; } nav { padding: 0 1.25rem; } }
+
+/* HERO */
+.hero {
+  min-height: 100vh; background: var(--navy); position: relative;
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+  overflow: hidden; padding-top: 64px;
+}
+.hero::before {
+  content: ''; position: absolute; inset: 0; pointer-events: none;
+  background: radial-gradient(ellipse at 50% 40%, rgba(255,153,51,0.13) 0%, transparent 65%),
+              radial-gradient(ellipse at 15% 85%, rgba(19,136,8,0.09) 0%, transparent 45%),
+              radial-gradient(ellipse at 85% 15%, rgba(19,136,8,0.09) 0%, transparent 45%);
+}
+.tricolor-top { position: absolute; top: 0; left: 0; right: 0; height: 6px; display: flex; }
+.tricolor-top span { flex: 1; }
+.tc-s { background: #FF9933; } .tc-w { background: #F8F8F8; } .tc-g { background: #138808; }
+
+.mandala-ring { position: absolute; border-radius: 50%; border: 1px solid rgba(255,153,51,0.1); pointer-events: none; }
+
+.hero-content { position: relative; z-index: 2; text-align: center; padding: 2rem 1.5rem; max-width: 860px; }
+
+.india-flag {
+  width: 180px; margin: 0 auto 2.5rem; border-radius: 3px; overflow: hidden;
+  box-shadow: 0 6px 30px rgba(0,0,0,0.5);
+  animation: flagFloat 4s ease-in-out infinite;
+}
+@keyframes flagFloat { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-9px); } }
+
+.hero-eyebrow { font-family: 'Noto Sans KR', sans-serif; font-size: 0.8rem; letter-spacing: 0.3em; color: var(--saffron); text-transform: uppercase; margin-bottom: 1.2rem; opacity: 0.9; }
+.hero-title {
+  font-family: 'Cinzel', serif; font-size: clamp(4rem, 10vw, 9rem); font-weight: 900; line-height: 0.9;
+  background: linear-gradient(150deg, #FFB347 0%, #FFD98A 45%, #FF9933 100%);
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+  margin-bottom: 0.2em;
+}
+.hero-year { font-family: 'Cinzel', serif; font-size: clamp(1.4rem, 4vw, 2.8rem); font-weight: 400; color: rgba(255,255,255,0.4); letter-spacing: 0.4em; display: block; margin-bottom: 1.5rem; }
+.hero-tagline { font-size: clamp(1rem, 2.5vw, 1.4rem); font-style: italic; color: rgba(255,255,255,0.7); font-weight: 300; margin-bottom: 2.5rem; }
+
+.date-badge {
+  display: inline-flex; flex-direction: column; align-items: center; gap: 0.2rem;
+  border: 1.5px solid rgba(255,153,51,0.55); border-radius: 4px;
+  padding: 1rem 2.5rem; background: rgba(255,153,51,0.07); margin-bottom: 2.5rem;
+}
+.date-badge .big { font-family: 'Cinzel', serif; font-size: 2.2rem; font-weight: 700; color: var(--saffron); line-height: 1; }
+.date-badge .small { font-family: 'Noto Sans KR', sans-serif; font-size: 0.72rem; letter-spacing: 0.25em; color: rgba(255,255,255,0.55); text-transform: uppercase; }
+.date-badge .loc { font-size: 1rem; color: rgba(255,255,255,0.75); font-style: italic; }
+
+.hero-cta { display: inline-block; background: var(--saffron); color: var(--navy); font-family: 'Cinzel', serif; font-size: 0.85rem; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; padding: 0.95rem 2.5rem; border-radius: 2px; text-decoration: none; transition: background 0.25s, transform 0.2s; }
+.hero-cta:hover { background: #FFB347; transform: translateY(-2px); }
+
+/* SHARED */
+section { padding: 5rem 2rem; }
+.section-inner { max-width: 1100px; margin: 0 auto; }
+.eyebrow { font-family: 'Noto Sans KR', sans-serif; font-size: 0.72rem; letter-spacing: 0.38em; text-transform: uppercase; color: var(--saffron); margin-bottom: 0.75rem; }
+.sec-title { font-family: 'Cinzel', serif; font-size: clamp(1.8rem, 5vw, 3.2rem); font-weight: 700; color: var(--navy); line-height: 1.1; margin-bottom: 1.25rem; }
+.sec-lead { font-size: 1.2rem; line-height: 1.75; color: var(--text-mid); font-weight: 300; max-width: 640px; }
+
+/* ABOUT */
+.about { background: var(--white); }
+.about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; margin-top: 3rem; }
+@media (max-width: 768px) { .about-grid { grid-template-columns: 1fr; gap: 2.5rem; } }
+.about-text p { font-size: 1.12rem; line-height: 1.85; color: var(--text-mid); margin-bottom: 1.1rem; }
+.about-text p:last-child { margin-bottom: 0; }
+.bridge-box { display: flex; align-items: center; gap: 1.2rem; margin-top: 2rem; padding: 1.2rem 1.5rem; background: var(--cream); border-left: 3px solid var(--saffron); }
+.bridge-box .flags { font-size: 2rem; white-space: nowrap; }
+.bridge-box .info strong { display: block; font-family: 'Cinzel', serif; font-size: 0.82rem; letter-spacing: 0.1em; color: var(--navy); margin-bottom: 0.2rem; }
+.bridge-box .info span { font-size: 0.95rem; color: var(--text-mid); line-height: 1.5; }
+.flag-caption { margin-top: 1rem; font-size: 0.85rem; color: var(--text-mid); font-style: italic; text-align: center; }
+
+/* SCHEDULE */
+.schedule { background: var(--navy); }
+.schedule .sec-title { color: var(--saffron); }
+.schedule .eyebrow { color: rgba(255,255,255,0.55); }
+.schedule-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1.5rem; margin-top: 3rem; }
+.sched-card { border: 1px solid rgba(255,153,51,0.22); border-radius: 4px; padding: 1.75rem; background: rgba(255,255,255,0.04); transition: background 0.3s, border-color 0.3s; position: relative; overflow: hidden; }
+.sched-card::after { content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 3px; background: var(--saffron); transform: scaleX(0); transform-origin: left; transition: transform 0.3s; }
+.sched-card:hover { background: rgba(255,153,51,0.07); border-color: rgba(255,153,51,0.45); }
+.sched-card:hover::after { transform: scaleX(1); }
+.card-icon { font-size: 1.8rem; display: block; margin-bottom: 1rem; }
+.card-time { font-family: 'Noto Sans KR', sans-serif; font-size: 0.68rem; letter-spacing: 0.3em; color: var(--saffron); text-transform: uppercase; margin-bottom: 0.6rem; }
+.card-title { font-family: 'Cinzel', serif; font-size: 1.1rem; font-weight: 700; color: white; margin-bottom: 0.55rem; line-height: 1.3; }
+.card-desc { font-size: 0.92rem; color: rgba(255,255,255,0.58); line-height: 1.65; font-weight: 300; }
+
+/* CULTURE */
+.culture { background: var(--cream); }
+.culture-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; margin-top: 3.5rem; }
+@media (max-width: 900px) { .culture-grid { grid-template-columns: 1fr 1fr; } }
+@media (max-width: 560px) { .culture-grid { grid-template-columns: 1fr; } }
+.culture-item { text-align: center; padding: 1.75rem 1.5rem; }
+.culture-icon { width: 70px; height: 70px; background: linear-gradient(135deg, var(--saffron), var(--deep-saffron)); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1.2rem; font-size: 1.75rem; }
+.culture-item h3 { font-family: 'Cinzel', serif; font-size: 1rem; color: var(--navy); margin-bottom: 0.55rem; letter-spacing: 0.05em; }
+.culture-item p { font-size: 0.93rem; line-height: 1.65; color: var(--text-mid); font-weight: 300; }
+
+/* VENUE */
+.venue { background: var(--white); border-top: 1px solid rgba(0,0,128,0.07); }
+.venue-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; margin-top: 3rem; align-items: start; }
+@media (max-width: 768px) { .venue-grid { grid-template-columns: 1fr; gap: 2rem; } }
+.venue-visual { background: linear-gradient(135deg, #dce8f5, #c0d5ec); aspect-ratio: 4/3; border-radius: 4px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 0.75rem; border: 1px solid rgba(0,0,128,0.1); }
+.venue-visual .pin { font-size: 3rem; }
+.venue-visual p { font-family: 'Noto Sans KR', sans-serif; font-size: 0.82rem; color: var(--navy); opacity: 0.75; letter-spacing: 0.08em; text-align: center; padding: 0 1rem; line-height: 1.6; }
+.venue-tag { display: inline-block; background: var(--pale-gold); color: var(--gold); font-size: 0.72rem; font-family: 'Noto Sans KR', sans-serif; letter-spacing: 0.2em; text-transform: uppercase; padding: 0.3em 0.9em; border-radius: 2px; margin-bottom: 1rem; }
+.venue-info h3 { font-family: 'Cinzel', serif; font-size: 1.55rem; color: var(--navy); margin-bottom: 0.4rem; }
+.venue-info .desc { font-size: 1rem; color: var(--text-mid); line-height: 1.7; font-weight: 300; margin-top: 0.75rem; }
+.venue-details { list-style: none; margin-top: 1.5rem; display: flex; flex-direction: column; gap: 0.85rem; }
+.venue-details li { display: flex; gap: 0.75rem; align-items: flex-start; font-size: 1rem; color: var(--text-mid); line-height: 1.5; }
+.d-icon { width: 28px; height: 28px; min-width: 28px; background: rgba(255,153,51,0.12); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.82rem; }
+.venue-details a { color: var(--navy); text-decoration: underline; text-underline-offset: 2px; }
+
+/* REGISTER */
+.register { background: linear-gradient(140deg, #FF9933 0%, #E07B1A 100%); text-align: center; position: relative; overflow: hidden; }
+.register::before { content: ''; position: absolute; inset: 0; background: repeating-linear-gradient(-45deg, transparent, transparent 40px, rgba(255,255,255,0.04) 40px, rgba(255,255,255,0.04) 80px); pointer-events: none; }
+.register .sec-title { color: white; }
+.register .eyebrow { color: rgba(255,255,255,0.75); }
+.register .sec-lead { color: rgba(255,255,255,0.85); margin: 0 auto 2.5rem; }
+.reg-form { max-width: 520px; margin: 0 auto; position: relative; z-index: 1; }
+.form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 1rem; }
+@media (max-width: 500px) { .form-row { grid-template-columns: 1fr; } }
+.reg-form input, .reg-form select { width: 100%; padding: 0.85rem 1.1rem; background: rgba(255,255,255,0.15); border: 1.5px solid rgba(255,255,255,0.4); border-radius: 3px; color: white; font-family: 'Crimson Pro', serif; font-size: 1rem; outline: none; transition: border-color 0.2s, background 0.2s; }
+.reg-form input::placeholder { color: rgba(255,255,255,0.6); }
+.reg-form input:focus, .reg-form select:focus { border-color: white; background: rgba(255,255,255,0.22); }
+.reg-form select option { color: var(--text-dark); background: white; }
+.reg-btn { display: block; width: 100%; margin-top: 1.2rem; padding: 1rem; background: var(--navy); color: white; font-family: 'Cinzel', serif; font-size: 0.88rem; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; border: none; border-radius: 3px; cursor: pointer; transition: background 0.25s, transform 0.2s; }
+.reg-btn:hover { background: #000060; transform: translateY(-2px); }
+.form-note { margin-top: 0.9rem; font-size: 0.83rem; color: rgba(255,255,255,0.62); font-style: italic; }
+
+/* SPONSORS */
+.sponsors { background: var(--cream); padding: 3.5rem 2rem; text-align: center; }
+.sponsors-label { font-family: 'Noto Sans KR', sans-serif; font-size: 0.68rem; letter-spacing: 0.4em; color: var(--text-mid); text-transform: uppercase; opacity: 0.55; margin-bottom: 2rem; }
+.sponsor-row { display: flex; justify-content: center; align-items: center; flex-wrap: wrap; gap: 1.5rem 2rem; }
+.sponsor-pill { height: 42px; background: var(--pale-gold); border: 1px solid rgba(200,148,26,0.3); border-radius: 3px; display: flex; align-items: center; justify-content: center; padding: 0 1.5rem; font-family: 'Cinzel', serif; font-size: 0.82rem; color: var(--gold); letter-spacing: 0.08em; min-width: 130px; }
+
+/* FOOTER */
+footer { background: var(--navy); color: rgba(255,255,255,0.5); padding: 2.5rem 2rem; text-align: center; }
+.ft-tricolor { display: flex; height: 4px; margin-bottom: 2rem; }
+.ft-tricolor span { flex: 1; }
+.ft-logo { font-family: 'Cinzel', serif; font-size: 1.3rem; color: white; margin-bottom: 0.5rem; letter-spacing: 0.1em; }
+footer p { font-size: 0.88rem; line-height: 1.9; }
+footer a { color: var(--saffron); text-decoration: none; }
+footer a:hover { text-decoration: underline; }
+</style>
+</head>
+<body>
+
+<nav>
+  <a class="nav-brand" href="#"><span>India</span> Day 2026</a>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#schedule">Program</a></li>
+    <li><a href="#culture">Culture</a></li>
+    <li><a href="#venue">Venue</a></li>
+    <li><a href="#register">Register</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="tricolor-top"><span class="tc-s"></span><span class="tc-w"></span><span class="tc-g"></span></div>
+  <div class="mandala-ring" style="width:720px;height:720px;top:50%;left:50%;transform:translate(-50%,-50%)"></div>
+  <div class="mandala-ring" style="width:520px;height:520px;top:50%;left:50%;transform:translate(-50%,-50%);border-color:rgba(19,136,8,0.1)"></div>
+  <div class="mandala-ring" style="width:320px;height:320px;top:50%;left:50%;transform:translate(-50%,-50%)"></div>
+
+  <div class="hero-content">
+    <div class="india-flag">
+      <svg viewBox="0 0 300 200" xmlns="http://www.w3.org/2000/svg" style="display:block;width:100%">
+        <rect x="0" y="0"     width="300" height="66.7"  fill="#FF9933"/>
+        <rect x="0" y="66.7"  width="300" height="66.6"  fill="#FEFEFE"/>
+        <rect x="0" y="133.3" width="300" height="66.7"  fill="#138808"/>
+        <g transform="translate(150,100)">
+          <circle r="28" fill="none" stroke="#000080" stroke-width="2.5"/>
+          <circle r="7"  fill="none" stroke="#000080" stroke-width="2"/>
+          <circle r="3"  fill="#000080"/>
+          <g stroke="#000080" stroke-width="1.5" stroke-linecap="round">
+            <line x1="0" y1="-28" x2="0" y2="-8" transform="rotate(0)"/>
+            <line x1="0" y1="-28" x2="0" y2="-8" transform="rotate(15)"/>
+            <line x1="0" y1="-28" x2="0" y2="-8" transform="rotate(30)"/>
+            <line x1="0" y1="-28" x2="0" y2="-8" transform="rotate(45)"/>
+            <line x1="0" y1="-28" x2="0" y2="-8" transform="rotate(60)"/>
+            <line x1="0" y1="-28" x2="0" y2="-8" transform="rotate(75)"/>
+            <line x1="0" y1="-28" x2="0" y2="-8" transform="rotate(90)"/>
+            <line x1="0" y1="-28" x2="0" y2="-8" transform="rotate(105)"/>
+            <line x1="0" y1="-28" x2="0" y2="-8" transform="rotate(120)"/>
+            <line x1="0" y1="-28" x2="0" y2="-8" transform="rotate(135)"/>
+            <line x1="0" y1="-28" x2="0" y2="-8" transform="rotate(150)"/>
+            <line x1="0" y1="-28" x2="0" y2="-8" transform="rotate(165)"/>
+            <line x1="0" y1="-28" x2="0" y2="-8" transform="rotate(180)"/>
+            <line x1="0" y1="-28" x2="0" y2="-8" transform="rotate(195)"/>
+            <line x1="0" y1="-28" x2="0" y2="-8" transform="rotate(210)"/>
+            <line x1="0" y1="-28" x2="0" y2="-8" transform="rotate(225)"/>
+            <line x1="0" y1="-28" x2="0" y2="-8" transform="rotate(240)"/>
+            <line x1="0" y1="-28" x2="0" y2="-8" transform="rotate(255)"/>
+            <line x1="0" y1="-28" x2="0" y2="-8" transform="rotate(270)"/>
+            <line x1="0" y1="-28" x2="0" y2="-8" transform="rotate(285)"/>
+            <line x1="0" y1="-28" x2="0" y2="-8" transform="rotate(300)"/>
+            <line x1="0" y1="-28" x2="0" y2="-8" transform="rotate(315)"/>
+            <line x1="0" y1="-28" x2="0" y2="-8" transform="rotate(330)"/>
+            <line x1="0" y1="-28" x2="0" y2="-8" transform="rotate(345)"/>
+          </g>
+        </g>
+      </svg>
+    </div>
+
+    <p class="hero-eyebrow">Embassy of India · Seoul · Republic of Korea</p>
+    <h1 class="hero-title">India<br>Day</h1>
+    <span class="hero-year">2 0 2 6</span>
+    <p class="hero-tagline">Celebrating the bonds of India–Korea friendship</p>
+    <div class="date-badge">
+      <span class="big">16 MAY</span>
+      <span class="small">Saturday · 2026</span>
+      <span class="loc">Yeouido Hangang Park, Seoul</span>
+    </div>
+    <br>
+    <a href="#register" class="hero-cta">Register Now</a>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="about" id="about">
+  <div class="section-inner">
+    <div class="about-grid">
+      <div class="about-text">
+        <p class="eyebrow">About the Event</p>
+        <h2 class="sec-title">A Celebration of Two Great Nations</h2>
+        <p>India Day 2026 brings the vibrant culture, rich traditions, and dynamic spirit of India to the banks of the Han River. Hosted by the Embassy of India in Korea, this landmark event marks the deepening bonds of friendship between India and the Republic of Korea.</p>
+        <p>From classical dance and music to culinary delights and art exhibitions, the day offers an immersive journey through India's magnificent heritage — shared with warmth alongside our Korean friends and the global community in Seoul.</p>
+        <div class="bridge-box">
+          <span class="flags">🇮🇳 🇰🇷</span>
+          <div class="info">
+            <strong>Partnership Since 1973</strong>
+            <span>Over five decades of diplomatic, economic, and cultural ties between India and Korea.</span>
+          </div>
+        </div>
+      </div>
+      <div>
+        <svg viewBox="0 0 360 240" xmlns="http://www.w3.org/2000/svg" style="width:100%;border-radius:4px;box-shadow:0 16px 50px rgba(0,0,128,0.2);display:block">
+          <rect x="0" y="0"   width="360" height="80"  fill="#FF9933"/>
+          <rect x="0" y="80"  width="360" height="80"  fill="#FEFEFE"/>
+          <rect x="0" y="160" width="360" height="80"  fill="#138808"/>
+          <g transform="translate(180,120)">
+            <circle r="34" fill="none" stroke="#000080" stroke-width="2.8"/>
+            <circle r="8.5" fill="none" stroke="#000080" stroke-width="2"/>
+            <circle r="3.5" fill="#000080"/>
+            <g stroke="#000080" stroke-width="1.6" stroke-linecap="round">
+              <line x1="0" y1="-34" x2="0" y2="-10" transform="rotate(0)"/>
+              <line x1="0" y1="-34" x2="0" y2="-10" transform="rotate(15)"/>
+              <line x1="0" y1="-34" x2="0" y2="-10" transform="rotate(30)"/>
+              <line x1="0" y1="-34" x2="0" y2="-10" transform="rotate(45)"/>
+              <line x1="0" y1="-34" x2="0" y2="-10" transform="rotate(60)"/>
+              <line x1="0" y1="-34" x2="0" y2="-10" transform="rotate(75)"/>
+              <line x1="0" y1="-34" x2="0" y2="-10" transform="rotate(90)"/>
+              <line x1="0" y1="-34" x2="0" y2="-10" transform="rotate(105)"/>
+              <line x1="0" y1="-34" x2="0" y2="-10" transform="rotate(120)"/>
+              <line x1="0" y1="-34" x2="0" y2="-10" transform="rotate(135)"/>
+              <line x1="0" y1="-34" x2="0" y2="-10" transform="rotate(150)"/>
+              <line x1="0" y1="-34" x2="0" y2="-10" transform="rotate(165)"/>
+              <line x1="0" y1="-34" x2="0" y2="-10" transform="rotate(180)"/>
+              <line x1="0" y1="-34" x2="0" y2="-10" transform="rotate(195)"/>
+              <line x1="0" y1="-34" x2="0" y2="-10" transform="rotate(210)"/>
+              <line x1="0" y1="-34" x2="0" y2="-10" transform="rotate(225)"/>
+              <line x1="0" y1="-34" x2="0" y2="-10" transform="rotate(240)"/>
+              <line x1="0" y1="-34" x2="0" y2="-10" transform="rotate(255)"/>
+              <line x1="0" y1="-34" x2="0" y2="-10" transform="rotate(270)"/>
+              <line x1="0" y1="-34" x2="0" y2="-10" transform="rotate(285)"/>
+              <line x1="0" y1="-34" x2="0" y2="-10" transform="rotate(300)"/>
+              <line x1="0" y1="-34" x2="0" y2="-10" transform="rotate(315)"/>
+              <line x1="0" y1="-34" x2="0" y2="-10" transform="rotate(330)"/>
+              <line x1="0" y1="-34" x2="0" y2="-10" transform="rotate(345)"/>
+            </g>
+          </g>
+        </svg>
+        <p class="flag-caption">The Tiranga — India's national flag, with the Ashoka Chakra representing the eternal wheel of law and virtue</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SCHEDULE -->
+<section class="schedule" id="schedule">
+  <div class="section-inner">
+    <p class="eyebrow">Programme</p>
+    <h2 class="sec-title">A Day Full of Wonder</h2>
+    <p class="sec-lead" style="color:rgba(255,255,255,0.6)">From morning ceremonies to a starlit riverside finale — a full day celebrating India's heritage.</p>
+    <div class="schedule-grid">
+      <div class="sched-card">
+        <span class="card-icon">🌅</span>
+        <p class="card-time">10:00 AM</p>
+        <h3 class="card-title">Inaugural Ceremony</h3>
+        <p class="card-desc">Official opening with flag hoisting, national anthems of India and Korea, and welcome addresses by dignitaries.</p>
+      </div>
+      <div class="sched-card">
+        <span class="card-icon">💃</span>
+        <p class="card-time">11:00 AM</p>
+        <h3 class="card-title">Classical Dance Showcase</h3>
+        <p class="card-desc">Bharatanatyam, Kathak, and Odissi performances by acclaimed dancers from India and the Indian diaspora in Korea.</p>
+      </div>
+      <div class="sched-card">
+        <span class="card-icon">🍛</span>
+        <p class="card-time">12:00 PM</p>
+        <h3 class="card-title">Culinary Festival</h3>
+        <p class="card-desc">A grand food bazaar featuring regional cuisines — from Punjabi curries to Kerala seafood and Rajasthani sweets.</p>
+      </div>
+      <div class="sched-card">
+        <span class="card-icon">🎨</span>
+        <p class="card-time">1:00 PM</p>
+        <h3 class="card-title">Art &amp; Craft Exhibition</h3>
+        <p class="card-desc">Mehndi, rangoli, block printing, and live pottery — interactive workshops open to all guests.</p>
+      </div>
+      <div class="sched-card">
+        <span class="card-icon">🎵</span>
+        <p class="card-time">3:00 PM</p>
+        <h3 class="card-title">Music &amp; Bollywood</h3>
+        <p class="card-desc">Live Bollywood music, classical instrumental performances, and a special Indo-Korean fusion concert.</p>
+      </div>
+      <div class="sched-card">
+        <span class="card-icon">🎆</span>
+        <p class="card-time">6:00 PM</p>
+        <h3 class="card-title">Gala Evening</h3>
+        <p class="card-desc">A grand closing reception with cultural awards, fashion showcase, and a spectacular riverside finale.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CULTURE -->
+<section class="culture" id="culture">
+  <div class="section-inner">
+    <p class="eyebrow">Experience India</p>
+    <h2 class="sec-title">Culture in Every Corner</h2>
+    <p class="sec-lead">India Day is a sensory celebration — every detail a window into 5,000 years of civilization.</p>
+    <div class="culture-grid">
+      <div class="culture-item">
+        <div class="culture-icon">🕌</div>
+        <h3>Heritage &amp; History</h3>
+        <p>Photo exhibitions and documentary screenings tracing India's ancient civilizations, independence movement, and modern rise.</p>
+      </div>
+      <div class="culture-item">
+        <div class="culture-icon">👗</div>
+        <h3>Fashion &amp; Textiles</h3>
+        <p>Silk sarees, handloom weaves, and embroidered ensembles — a fashion walk celebrating India's breathtaking textile traditions.</p>
+      </div>
+      <div class="culture-item">
+        <div class="culture-icon">🏏</div>
+        <h3>Sports &amp; Games</h3>
+        <p>Cricket exhibition, kabaddi demonstrations, and traditional Indian board games — fun for the whole family.</p>
+      </div>
+      <div class="culture-item">
+        <div class="culture-icon">🪔</div>
+        <h3>Spiritual Traditions</h3>
+        <p>Yoga demonstrations, meditation sessions, and an Ayurveda wellness corner for holistic discovery.</p>
+      </div>
+      <div class="culture-item">
+        <div class="culture-icon">🎬</div>
+        <h3>Cinema &amp; Media</h3>
+        <p>Bollywood screening lounge, behind-the-scenes exhibitions, and a K-Bollywood fusion celebration.</p>
+      </div>
+      <div class="culture-item">
+        <div class="culture-icon">🌺</div>
+        <h3>Flowers &amp; Festivity</h3>
+        <p>Marigold installations, jasmine garland workshops, and vibrant rangoli art created live throughout the day.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- VENUE -->
+<section class="venue" id="venue">
+  <div class="section-inner">
+    <p class="eyebrow">Venue</p>
+    <h2 class="sec-title">Find Us in Seoul</h2>
+    <div class="venue-grid">
+      <div class="venue-visual">
+        <span class="pin">🌸</span>
+        <p>Yeouido Hangang Park<br>along the Han River, Seoul</p>
+      </div>
+      <div class="venue-info">
+        <div class="venue-tag">Main Venue</div>
+        <h3>Yeouido Hangang Park</h3>
+        <p class="desc">One of Seoul's most beloved riverside parks, set along the Han River on Yeouido island — a spectacular open-air setting for this landmark celebration of India in Korea.</p>
+        <ul class="venue-details">
+          <li>
+            <div class="d-icon">📍</div>
+            <span>Yeouido Hangang Park, Yeoui-dong, Yeongdeungpo-gu, Seoul, Republic of Korea</span>
+          </li>
+          <li>
+            <div class="d-icon">🚇</div>
+            <span>Yeouinaru Station (Line 5, Exit 2) — 5 min walk · Yeouido Station (Line 5/9) also nearby</span>
+          </li>
+          <li>
+            <div class="d-icon">🕙</div>
+            <span>Saturday, 16 May 2026 · Doors open 9:30 AM · Event 10:00 AM – 9:00 PM</span>
+          </li>
+          <li>
+            <div class="d-icon">🎟️</div>
+            <span>Free entry · Registration required · Limited seats for Gala Evening</span>
+          </li>
+          <li>
+            <div class="d-icon">📧</div>
+            <span>
+              <a href="mailto:indiadayinkore@gmail.com">indiadayinkore@gmail.com</a><br>
+              <a href="mailto:cons.seoul@mea.gov.in">cons.seoul@mea.gov.in</a>
+            </span>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- REGISTER -->
+<section class="register" id="register">
+  <div class="section-inner">
+    <p class="eyebrow">Join Us</p>
+    <h2 class="sec-title">Reserve Your Place</h2>
+    <p class="sec-lead">Registration is free and open to all. Be part of this unforgettable celebration of India in Seoul.</p>
+    <form class="reg-form" onsubmit="handleReg(event)">
+      <div class="form-row">
+        <input type="text" placeholder="First Name" required>
+        <input type="text" placeholder="Last Name" required>
+      </div>
+      <div class="form-row">
+        <input type="email" placeholder="Email Address" required>
+        <input type="tel" placeholder="Phone (optional)">
+      </div>
+      <div class="form-row">
+        <select required>
+          <option value="" disabled selected>Nationality</option>
+          <option>Indian</option>
+          <option>Korean</option>
+          <option>Other</option>
+        </select>
+        <select>
+          <option value="" disabled selected>Number of Guests</option>
+          <option>Just me</option>
+          <option>2 people</option>
+          <option>3-5 people</option>
+          <option>6+ people</option>
+        </select>
+      </div>
+      <button type="submit" class="reg-btn" id="regBtn">Confirm Registration</button>
+      <p class="form-note">Free entry. Confirmation will be sent to your email.</p>
+    </form>
+  </div>
+</section>
+
+<!-- SPONSORS -->
+<section class="sponsors">
+  <div class="section-inner">
+    <p class="sponsors-label">Supported by</p>
+    <div class="sponsor-row">
+      <div class="sponsor-pill">Embassy of India</div>
+      <div class="sponsor-pill">IITAAK</div>
+      <div class="sponsor-pill">ICCR Korea</div>
+      <div class="sponsor-pill">Seoul Government</div>
+      <div class="sponsor-pill">Yeouido Hangang Park</div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="ft-tricolor">
+    <span style="background:#FF9933"></span>
+    <span style="background:#F8F8F8"></span>
+    <span style="background:#138808"></span>
+  </div>
+  <p class="ft-logo">India Day 2026 · Seoul</p>
+  <p>Embassy of India, Seoul · 37-3 Hannam-daero 28-gil, Yongsan-gu, Seoul, Republic of Korea</p>
+  <p><a href="mailto:indiadayinkore@gmail.com">indiadayinkore@gmail.com</a> &nbsp;·&nbsp; <a href="mailto:cons.seoul@mea.gov.in">cons.seoul@mea.gov.in</a></p>
+  <p style="margin-top:1rem;font-size:0.78rem;opacity:0.4;">© 2026 Embassy of India, Seoul. All rights reserved.</p>
+</footer>
+
+<script>
+  function handleReg(e) {
+    e.preventDefault();
+    var btn = document.getElementById('regBtn');
+    btn.textContent = 'Registered! See you on 16 May 2026';
+    btn.style.background = '#138808';
+    btn.disabled = true;
+  }
+</script>
+</body>
+</html>
