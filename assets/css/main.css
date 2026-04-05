@@ -29,7 +29,31 @@ nav {
 .nav-links { display: flex; gap: 2rem; list-style: none; }
 .nav-links a { font-family: 'Noto Sans KR', sans-serif; font-size: 0.75rem; letter-spacing: 0.15em; text-transform: uppercase; color: rgba(255,255,255,0.7); text-decoration: none; transition: color 0.2s; }
 .nav-links a:hover { color: var(--saffron); }
-@media (max-width: 640px) { .nav-links { display: none; } nav { padding: 0 1.25rem; } }
+
+/* HAMBURGER MENU */
+.hamburger { display: none; flex-direction: column; gap: 5px; background: none; border: none; cursor: pointer; padding: 8px; }
+.hamburger span { width: 24px; height: 2.5px; background: rgba(255,255,255,0.8); border-radius: 2px; transition: all 0.3s ease; }
+.hamburger.active span:nth-child(1) { transform: rotate(45deg) translate(10px, 10px); }
+.hamburger.active span:nth-child(2) { opacity: 0; }
+.hamburger.active span:nth-child(3) { transform: rotate(-45deg) translate(7px, -7px); }
+
+@media (max-width: 640px) { 
+  nav { padding: 0 1rem; flex-wrap: nowrap; height: 64px; justify-content: space-between; }
+  .nav-brand { font-size: 0.85rem; }
+  .hamburger { display: flex; }
+  .nav-links { 
+    position: absolute; top: 64px; left: 0; right: 0; 
+    flex-direction: column; gap: 0; 
+    background: rgba(0,0,128,0.98); 
+    border-bottom: 1px solid rgba(255,153,51,0.3);
+    max-height: 0; overflow: hidden; transition: max-height 0.3s ease;
+    width: 100%; padding: 0;
+  }
+  .nav-links.active { max-height: 250px; padding: 1rem 0; }
+  .nav-links li { width: 100%; text-align: center; padding: 0.75rem 0; border-top: 1px solid rgba(255,153,51,0.1); }
+  .nav-links li:first-child { border-top: none; }
+  .nav-links a { font-size: 0.75rem; letter-spacing: 0.1em; display: block; }
+}
 
 /* HERO */
 .hero {
