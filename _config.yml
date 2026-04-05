@@ -21,7 +21,7 @@
 title: India Day 2026
 email: patel.ayush08@gmail.com
 description: >- # this means to ignore newlines until "baseurl:"
-  Official website of India Day in Korea 2026 organized by Embassy of India in Seoul and IITAAK.
+  Official website of India Day in Korea 2026 organized by Embassy of India in Seoul and IIT Alumni Association of Korea (IITAAK).
 baseurl: "" # the subpath of your site, e.g. /blog
 domain: indiadayinkorea.github.io
 url: https://indiadayinkorea.github.io # the base hostname & protocol for your site, e.g. http://example.com
