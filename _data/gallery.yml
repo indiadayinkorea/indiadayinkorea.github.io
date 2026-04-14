@@ -1,0 +1,11 @@
+# Add your gallery images here
+# Images should be placed in assets/images/gallery/
+# Format: /assets/images/gallery/filename.jpg
+
+images:
+  - /assets/images/gallery/img1.jpg
+  - /assets/images/gallery/img2.jpg
+  - /assets/images/gallery/img3.jpg
+  - /assets/images/gallery/img4.jpg
+  - /assets/images/gallery/img5.jpg
+  - /assets/images/gallery/img6.jpg
